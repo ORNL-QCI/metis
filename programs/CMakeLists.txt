@@ -1,5 +1,7 @@
 # These programs use internal metis data structures.
-include_directories(../libmetis)
+include_directories(../libmetis ../GKlib)
+
+target_link_libraries(GKlib)
 
 # Build program.
 add_executable(gpmetis gpmetis.c cmdline_gpmetis.c io.c stat.c)

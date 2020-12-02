@@ -16,18 +16,19 @@ else()
   set(METIS_LIBRARY_TYPE STATIC)
 endif(SHARED)
 
-include(./conf/gkbuild.cmake)
+#include(./conf/gkbuild.cmake)
+include(GKlib/GKlibSystem.cmake)
 
 # METIS' custom options
 #option(IDX64 "enable 64 bit ints" OFF)
 #option(REAL64 "enable 64 bit floats (i.e., double)" OFF)
 #if(IDX64)
-#  set(METIS_COPTIONS "${METIS_COPTIONS} -DIDXTYPEWIDTH=64")
+  set(METIS_COPTIONS "${METIS_COPTIONS} -DIDXTYPEWIDTH=64")
 #else()
 #  set(METIS_COPTIONS "${METIS_COPTIONS} -DIDXTYPEWIDTH=32")
 #endif(IDX64)
 #if(REAL64)
-#  set(METIS_COPTIONS "${METIS_COPTIONS} -DREALTYPEWIDTH=64")
+  set(METIS_COPTIONS "${METIS_COPTIONS} -DREALTYPEWIDTH=64")
 #else()
 #  set(METIS_COPTIONS "${METIS_COPTIONS} -DREALTYPEWIDTH=32")
 #endif(REAL64)
@@ -37,16 +38,17 @@ include(./conf/gkbuild.cmake)
 
 # Add include directories.
 # i.e., the -I equivalent
-include_directories(build/xinclude)
-include_directories(${GKLIB_PATH}/include)
+include_directories("include")
+include_directories("GKlib/include")
 include_directories(${CMAKE_INSTALL_PREFIX}/include)
 
 # List of paths that the compiler will search for library files.
 # i.e., the -L equivalent
-link_directories(${GKLIB_PATH}/lib)
+#link_directories("GKlib/lib")
 link_directories(${CMAKE_INSTALL_PREFIX}/lib)
 
 # Recursively look for CMakeLists.txt in subdirs.
-add_subdirectory("build/xinclude")
+add_subdirectory("GKlib")
+add_subdirectory("include")
 add_subdirectory("libmetis")
 add_subdirectory("programs")

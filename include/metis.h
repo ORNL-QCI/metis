@@ -1,5 +1,5 @@
 /*!
-\file metis.h 
+\file metis.h
 \brief This file contains function prototypes and constant definitions for METIS
  *
 \author George
@@ -8,7 +8,7 @@
 */
 
 #ifndef _METIS_H_
-#define _METIS_H_ 
+#define _METIS_H_
 
 /****************************************************************************
 * A set of defines that can be modified by the user
@@ -30,7 +30,7 @@
  GCC does provides these definitions in stdint.h, but it may require some
  modifications on other architectures.
 --------------------------------------------------------------------------*/
-//#define IDXTYPEWIDTH 32
+#define IDXTYPEWIDTH 64
 
 
 /*--------------------------------------------------------------------------
@@ -40,7 +40,7 @@
    32 : single precission floating point (float)
    64 : double precission floating point (double)
 --------------------------------------------------------------------------*/
-//#define REALTYPEWIDTH 32
+#define REALTYPEWIDTH 64
 
 
 

@@ -17,8 +17,8 @@ gklib_path = not-set
 
 BUILDDIR = build
 
-IDXWIDTH  = "\#define IDXTYPEWIDTH 32"
-REALWIDTH = "\#define REALTYPEWIDTH 32"
+IDXWIDTH  = "\#define IDXTYPEWIDTH 64"
+REALWIDTH = "\#define REALTYPEWIDTH 64"
 
 # Process configuration options.
 CONFIG_FLAGS = -DCMAKE_VERBOSE_MAKEFILE=1
