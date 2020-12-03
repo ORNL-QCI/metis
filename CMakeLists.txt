@@ -10,11 +10,11 @@ else()
 endif()
 
 # Configure libmetis library.
-if(SHARED)
+#if(SHARED)
   set(METIS_LIBRARY_TYPE SHARED)
-else()
-  set(METIS_LIBRARY_TYPE STATIC)
-endif(SHARED)
+#else()
+#  set(METIS_LIBRARY_TYPE STATIC)
+#endif(SHARED)
 
 #include(./conf/gkbuild.cmake)
 include(GKlib/GKlibSystem.cmake)
